@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>happy holidays</title>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <div class="circle">
+                <!-- <h2>Bye bye <br>2020</h2> -->
+                <h2>Merry Christmas<br>メリークリスマス</h2>
+            </div>
+        </div>
+    </section>
+    <script>
+        const bubbles = () => {
+            const count = 300;
+            const section = document.querySelector('section');
+            let i = 0
+            while(i < count) {
+                // console.log('test');
+                const bubble = document.createElement('i');
+                const x = Math.floor(Math.random() * window.innerWidth);
+                const y = Math.floor(Math.random() * window.innerHeight);
+                const size = Math.random() * 15 + 1;
+                bubble.style.left = `${x}px`;
+                bubble.style.top=`${y}px`;
+                bubble.style.width = `${size}px`;
+                bubble.style.height=`${size}px`;
+
+                bubble.style.animationDuration = 5+size+'s';
+                bubble.style.animationDelay = `-${size}s`;
+
+                section.appendChild(bubble);
+                i++;
+            }
+        }
+        bubbles();
+    </script>
+</body>
+</html>
