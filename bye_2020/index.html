@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>bye2020</title>
+</head>
+<body>
+    <div class="text">
+        <h2>Bye bye 2020</h2>
+    </div>
+    <svg>
+        <filter id="bye">
+            <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="2" seed="3">
+                <animate attributeName="baseFrequency" dur="3s" values="0.1 0.1;0.12 0.12" repeatCount="indefinite"></animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="0" id="ani"></feDisplacementMap>
+        </filter>
+    </svg>
+</body>
+<script>
+    let scaleVal = 0;
+    let scaleUnit = 10;
+    const d = document.getElementById('ani');
+        setInterval(() => {
+            if(scaleVal > 100) {
+                scaleUnit = -scaleUnit;
+            }
+            if (scaleVal < 0) {
+                scaleUnit = -scaleUnit;
+            }
+           scaleVal += scaleUnit;
+        //    console.log(scaleVal);
+           d.setAttribute("scale", scaleVal);
+        }, 1000);
+</script>
+</html>
