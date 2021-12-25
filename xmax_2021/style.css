@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+/* section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000000;
+} */
+
+
+body i {
+  position: absolute;
+  background: #fff;
+  border-radius: 100%;
+  animation: animate 5s linear infinite;
+}
+
+body i:nth-child(even) {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.tree {
+    position: relative;
+    top: -150px;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: treeAnime 10s linear infinite;
+}
+
+.tree::before {
+  content: 'Merry Christmas';
+  white-space: nowrap;
+  position: absolute;
+  color: #bb4622;
+  font-size: 3.5em;
+  top: -80px;
+  left: calc(50% - 550px);
+    transform: translate(50%, -50%);
+    text-transform: uppercase;
+    font-family: verdana;
+    text-shadow: 1px 1px 1px #cf0d0d,
+        1px 2px 1px #cf0d0d,
+        1px 3px 1px #cf0d0d,
+        1px 4px 1px #cf0d0d,
+        1px 5px 1px #cf0d0d,
+        1px 6px 1px #cf0d0d,
+        1px 7px 1px #cf0d0d,
+        1px 8px 1px #cf0d0d,
+        1px 9px 1px #cf0d0d,
+        1px 10px 1px #cf0d0d,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+@keyframes treeAnime {
+  0% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+}
+
+
+.tree div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(100px * var(--j)));
+}
+
+.tree div.top span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #69c069, #77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(173px);
+}
+
+
+.tree div.bottom span {
+    position: absolute;
+    top: 350px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(90deg, #bb4622, #df7214);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    transform-origin: bottom;
+   border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(30px);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: #f0f0f2;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateZ(-500px);
+  filter: blur(20px);
+}
+
+/* section .box {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+}
+
+section .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000, transparent);
+  opacity: 0.5;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+section .box .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #e4e3e8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+section .box .circle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: linear-gradient(315deg, #fff, #e4e3e8);
+  border-radius: 50%;
+}
+
+section .box .circle h2 {
+  position: absolute;
+  z-index: 2;
+  font-size: 3em;
+  color: crimson;
+  text-align: center;
+} */
+
+
+
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+
+  90% {
+    /* transform: translateY(0); */
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(2000%);
+    opacity: 0;
+  }
+}
